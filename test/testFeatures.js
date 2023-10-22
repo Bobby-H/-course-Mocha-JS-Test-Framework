@@ -11,18 +11,21 @@ const { setTimeout } = require('timers/promises');
 
 describe('Mathematical Operations- Test Suite', function() { //describe the group of test cases
 
-    beforeEach(function(done) {
-        
-        this.timeout(500);
+    this.retries(4);
 
-        setTimeout(done, 3000);
-
+    beforeEach(function () {
+      setTimeout(200);
+    });
+  
+    it('should succeed on the 3rd try', function () {
+      // Specify this test to only retry up to 2 times
+      this.retries(2);
     });
 
     let a = 10
     let b = 10
     
-    it('Addition of two numbers', function(done){ // using the .only() modifier to run this test, or other test cases with .only()
+    it('Addition of two numbers', function(){ // using the .only() modifier to run this test, or other test cases with .only()
         
         let c = a+b
         
@@ -45,6 +48,6 @@ describe('Mathematical Operations- Test Suite', function() { //describe the grou
         assert.equal(c,1)
     });
 
-    it('this is a pending test for a feature in development');
+//    it('this is a pending test for a feature in development');
 
 });
