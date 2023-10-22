@@ -8,9 +8,9 @@
 // 4. Division
 var assert = require('assert');
 
-describe('Mathematical Operations- Test Suite', function() {
+describe('Mathematical Operations- Test Suite', function() { //describe the group of test cases
     
-    it('Addition of two numbers', function(){
+    it('Addition of two numbers', function(){ // individual test cases within the scope of the described test group
        let a = 10
        let b = 10 
        let c = a+b
