@@ -7,38 +7,41 @@
 // 3. Multiplication
 // 4. Division
 var assert = require('assert');
+const { setTimeout } = require('timers/promises');
 
 describe('Mathematical Operations- Test Suite', function() { //describe the group of test cases
-    
-    it('Addition of two numbers', function(){ // using the .only() modifier to run this test, or other test cases with .only()
-       let a = 10
-       let b = 10 
-       let c = a+b
 
-       assert.equal(c,20)
+    beforeEach(function(done) {
+        
+        this.timeout(500);
+
+        setTimeout(done, 3000);
+
+    });
+
+    let a = 10
+    let b = 10
+    
+    it('Addition of two numbers', function(done){ // using the .only() modifier to run this test, or other test cases with .only()
+        
+        let c = a+b
+        
+        assert.equal(c,20)
+
     });
 
     it('Subtraction of two numbers', () => {
-        let a = 10
-        let b = 10
-        let c = a-b
-
+         let c = a-b
         assert.equal(c,0)
     });
     
     it('Multiplication of two numbers', () => {
-        let a = 10
-        let b = 10 
-        let c = a*b
-
+         let c = a*b
         assert.equal(c,100)
     });
     
     it('Division of two numbers', () => {
-        let a = 10
-        let b = 10
-        let c = a/b
-
+         let c = a/b
         assert.equal(c,1)
     });
 
